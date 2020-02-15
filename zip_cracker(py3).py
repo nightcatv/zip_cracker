@@ -23,8 +23,8 @@ def main():
         dname = options.dname
         zFile = zipfile.ZipFile(zname)
         passFile = open(dname)
+        start = time.perf_counter()
         for password in passFile:
-            start = time.perf_counter()
             password = password.strip("\n")
             guess = extractFile("./", zFile, password)
             if guess:
